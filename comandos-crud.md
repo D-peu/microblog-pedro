@@ -11,6 +11,7 @@
 
 ### INSERT na tabela de usuários
 
+```sql
 INSERT INTO usuarios(nome, email, senha, tipo)
 VALUES(
     'Tiago B. dos Santos',
@@ -18,6 +19,7 @@ VALUES(
     '123senac',
     'admin'
 );
+```
 
 INSERT INTO usuarios(nome, email, senha, tipo)
 VALUES(
