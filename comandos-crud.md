@@ -50,3 +50,41 @@ SELECT nome, email FROM usuarios WHERE tipo = 'admin';
 UPDATE usuarios SET tipo = 'admin' WHERE id = 4;
 
 -- Obs: NUNCA ESQUEÇA DE PASSAR UMA CONDIÇÃO PARA O UPDATE!
+
+### DELETE em dados da tabela de usuários
+
+DELETE FROM usuarios WHERE id = 3;
+
+-- Obs: NUNCA ESQUEÇA DE PASSAR UMA CONDIÇÃO PARA O UPDATE!
+
+
+### INSERT na tabela de noticias 
+
+INSERT INTO noticias(titulo, resumo, texto, imagem, usuario_id)
+VALUE(
+    'Descoberto oxigênio em Vênus',
+    'Recentemente a sonda XYZ encontrou traços de oxigênio no planeta',
+    'Nesta manhã, em um belo dia para a astronomia, pois foi feita uma incivél descoberta em relação ao espaço e sua infinita extensão...',
+    'vanus.jpg',
+    1
+);
+
+
+INSERT INTO noticias(titulo, resumo, texto, imagem, usuario_id)
+VALUE(
+    'Nova versão do VsCode',
+    'Atualização inovadora já disponivel',
+    'Dentre as novidades temos diversas possibilidades com inteligência artifial e melhor organização de arquivo e projetos em grupo',
+    'vscode.png',
+    5
+);
+
+
+INSERT INTO noticias(titulo, resumo, texto, imagem, usuario_id)
+VALUE(
+    'Onda de Calor no Brasil',
+    'Calor de 40 graus assustador',
+    'Tenha cuidado com os proximos dias, temos muitas formas de prevenir possiveis problemas',
+    'sol.svg',
+    1
+);
