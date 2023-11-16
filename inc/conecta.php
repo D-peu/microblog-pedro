@@ -22,6 +22,3 @@ if( !$conexao ){
     // Senão, a conexão foi feita com sucesso!
     echo "Beleza, conectado!";
 }
-
-
-?>
