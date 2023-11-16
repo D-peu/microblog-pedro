@@ -10,12 +10,12 @@ $banco = "microblog_pedro";
 $conexao = mysqli_connect($servidor, $usuario, $senha, $banco);
 
 /* Definindo o charset da conexão também como utf8 */
-mysqli_set_charset($conexão, "utf8");
+mysqli_set_charset($conexao, "utf8");
 
 /* Verificação da conexão */
 
 // Se NÃO FOR POSSÍVEL realizar a conexão
-if( !$conexão ){
+if( !$conexao ){
     // PARE a aplicação e mostre uma mensagem de erro 
     die("Deu ruim:".mysqli_connect_error());
 } else {
