@@ -20,3 +20,12 @@ function lerUsuarios($conexao){
     // Retornamos o resultado da query transformando em array associativo
     return mysqli_fetch_all($resultado, MYSQLI_ASSOC);
 }
+
+function lerUmUsuarios($conexao, $id){
+    $sql = "SELECT * FROM usuarios WHERE id = $id";
+
+    $resultado = mysqli_query($conexao, $sql) or die(mysqli_error($conexao));
+
+    // Retornando o resultado transformado em UM array com os dados
+    return mysqli_fetch_assoc($resultado);
+}
