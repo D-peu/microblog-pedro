@@ -20,9 +20,21 @@ if(isset($_POST['atualizar'])){
 	for igual á senha que já existe no banco de dados, estão 
 	significa que o usuário NÃO ALTEROU A SENHA. Portanto,
 	devemos MANTER a senha existente.*/
+	if( empty($_POST['senha']) || password_verify($_POST['senha'], $usuario['senha'] ) ){
+		
+		$senha = $usuario['senha']; // mantemos a mesma
+	} else {
+		/* Caso contrario, pegaremos a senha nova digitada
+		e a CODIFICAMOS antes de mandar para o banco. */
 
-	/* Caso contrario, pegaremos a senha nova digitada
-	e a CODIFICAMOS antes de mandar para o banco. */
+		$senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
+	}
+
+	// Chamamos a função e passamos os dados
+	atualizarUsuario($conexao, $id, $nome, $email, $senha, $tipo);
+
+	// Redirecionamos para a página de usuarios
+	header("location:usuarios.php");
 }
 ?>
 
