@@ -9,9 +9,9 @@ if(isset($_GET['acesso_negativo'])){
 	$mensagem = "Você deve logar primeiro!";
 } elseif(isset($_GET['dados_incorretos'])){
 	$mensagem = "Dados incorretos, verifique!";
-} elseif(isset($_GET['sair'])){
-	$mensgem = "Você saiu do sistema!";
-} else(isset($_GET['campos_obrigatorios'])){
+} elseif(isset($_GET['saiu'])){
+	$mensagem = "Você saiu do sistema!";
+} elseif(isset($_GET['campos_obrigatorios'])){
 	$mensagem = "Preencha e-mail e senha!";
 }
 
