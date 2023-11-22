@@ -19,9 +19,24 @@ if(isset($_POST['entrar'])){
 	um usuário cadastrado */
 	$usuario = buscaUsuario($conexao, $email);
 
-	echo "<pre>";
-	var_dump($usuario);
-	echo "<pre>";
+	/* Verificação de usuario e senha
+	Se usuario existe (diferente de null) e a verificação da senha
+	der certo (password_verify) */
+	if($usuario != null && password_verify($senha, $usuario['senha'])){
+		// Então, inicie o processo de login
+		login($usuario['id'], $usuario['nome'], $usuario['tipo']);
+
+		// Redirecione para a index administrativa
+		header("location:admin/index.php");
+
+		exit; // pare qualquer outro script
+	} else {
+		// Caso contrário, senha está errada
+		header("location:login.php?dados_incorretos");
+		exit;
+	}
+
+	
 	
 } // fim if isset entrar
 ?>

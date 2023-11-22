@@ -11,7 +11,7 @@ de autenticação. Exemplo: login/senha, digital, facial etc.
 */
 
 /* Verificar se já NÃo EXISTE uma sessão em funcionamento */
-if( isset($_SESSION) ){
+if( !isset($_SESSION) ){
     // Então inicie uma sessão
     session_start();
 }
