@@ -4,6 +4,9 @@ require_once "../inc/cabecalho-admin.php";
 // Importando as funções do arquivo
 require "../inc/funcoes-usuario.php";
 
+// Verificando se o usuário pode entrar nesta página
+verificaTipo();
+
 /* Detectando se o formulário foi acionado */
 if( isset($_POST['inserir'])){
 

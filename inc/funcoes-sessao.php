@@ -35,11 +35,24 @@ function login($id, $nome, $tipo){
     em Sair*/
     $_SESSION["id"] = $id;
     $_SESSION["nome"] = $nome;
-    $_SESSIOM["tipo"] = $tipo;
+    $_SESSION["tipo"] = $tipo;
 }
 
 function logout(){
     session_destroy();
     header("location:../login.php?saiu");
     exit; // ou die()
+}
+
+/* Esta verificação será aplicada em TODAS AS PÁGINAS
+relacionadas ao gerenciamento de usuários da área
+administrativa */
+function verificaTipo(){
+    /* Se o tipo de usuário logado 
+    na sessão NÃO FOR admin */
+    if( $_SESSION['tipo'] != 'admin' ){
+        // Então redirecione para:
+        header("location:nao-autorizado.php");
+        exit;
+    }
 }
