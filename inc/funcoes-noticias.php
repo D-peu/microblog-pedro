@@ -11,7 +11,16 @@ function inserirNoticia($conexao){
 
 
 /* Usada em noticia-insere.php e noticia-atualiza.php */
-function upload(){
+function upload($arquivo){
+
+    $tiposValidos = ["image/png", "image/jpeg", "image/gif", "image/svg+xml"];
+
+    if(!in_array($arquivo['type'], $tiposValidos)){
+        echo "script
+            alert('Formato inválido!'); history.back();
+            </script>";
+        exit;
+    }
     
 } // fim upload
 
