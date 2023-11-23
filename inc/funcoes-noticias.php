@@ -11,7 +11,7 @@ function inserirNoticia($conexao, $titulo, $texto, $resumo, $nomeImagem, $usuari
         )";
     
 
-    // mysqli_query($conexao, $sql) or die(mysqli_error($conexao));
+    mysqli_query($conexao, $sql) or die(mysqli_error($conexao));
 
 } // fim inserirNoticia
 
