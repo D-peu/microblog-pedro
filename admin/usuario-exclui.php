@@ -1,5 +1,5 @@
 <?php
-require "funcoes-sessao.php";
+require "../inc/funcoes-sessao.php";
 require "../inc/funcoes-usuario.php";
 
 verificaAcesso();
