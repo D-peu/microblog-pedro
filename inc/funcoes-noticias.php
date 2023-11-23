@@ -13,14 +13,29 @@ function inserirNoticia($conexao){
 /* Usada em noticia-insere.php e noticia-atualiza.php */
 function upload($arquivo){
 
+    // Lista de formatos suportados pelo site
+    // (precisa ser igual ao que etá no html)
     $tiposValidos = ["image/png", "image/jpeg", "image/gif", "image/svg+xml"];
 
+    // Verificando se o tipo do arquivo NÃO é um dos suportados
     if(!in_array($arquivo['type'], $tiposValidos)){
         echo "script
             alert('Formato inválido!'); history.back();
             </script>";
         exit;
     }
+
+    // Obtendo apenas o nome/extensão do arquivo
+    $nome = $arquivo['name'];
+
+    // Obtendo informações de acesso temporário
+    $temporaio = $arquivo['tmp_name'];
+
+    // Definindo para onde a imagem vai e com qual nome 
+    $destino = "../imagens/".$nome;
+
+    // Movendo o arquivo da área tenporária para a pasta final
+    move_uploaded_file($temporaio, $destino);
     
 } // fim upload
 
