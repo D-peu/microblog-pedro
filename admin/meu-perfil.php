@@ -35,6 +35,7 @@ if(isset($_POST['atualizar'])){
 	atualizarUsuario($conexao, $id, $nome, $email, $senha, $tipo);
 
 	// Atualize na sessão atual o nome da pessoa (caso mude)
+	$_SESSION["nome"] = $nome;
 
 	// Redirecionamos para a página de usuarios
 	header("location:index.php");
